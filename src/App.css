@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap');
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
+  font-family: 'Antonio', sans-serif;
+  font-family: 'Spartan', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --white: #ffffff;
+  --bg-dark: #070724;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--bg-dark);
+  background-image: url('./assets/background-stars.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper {
+  max-width: 95%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__title {
+  font-family: 'Antonio', sans-serif;
+  color: var(--white);
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
