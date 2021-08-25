@@ -1,13 +1,16 @@
 import './App.css';
 import Header from './components/Header';
 import Planet from './components/Planet';
+import { BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <Planet />
-    </div>
+    <Router>
+      <div className="wrapper">
+        <Header />
+        <Planet />
+      </div>
+    </Router>
   );
 }
 

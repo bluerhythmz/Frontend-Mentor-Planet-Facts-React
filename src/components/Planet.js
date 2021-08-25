@@ -19,11 +19,29 @@ const Planet = () => {
                 <div className="text__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea corrupti commodi totam atque eveniet eaque distinctio veniam sequi neque nihil dolorum quibusdam vero consequuntur corporis quia, cumque, voluptas labore quaerat!</div>
                 <span className="text__source">
                     Source: 
-                     <a href="#" className="source">
+                     <a href="./" className="source">
                           Wikipedia
-                         <img src={SourceIcon} alt="" />
+                         <img src={SourceIcon} alt="link-icon" className="source__img"/>
                     </a>
                 </span>
+            </div>
+            <div className="data">
+                <div className="data__item">
+                    <div className="data__title">Rotation Time</div>
+                    <div className="data__stat">830773</div>
+                </div>
+                <div className="data__item">
+                    <div className="data__title">Rotation Time</div>
+                    <div className="data__stat">830773</div>
+                </div>
+                <div className="data__item">
+                    <div className="data__title">Rotation Time</div>
+                    <div className="data__stat">830773</div>
+                </div>
+                <div className="data__item">
+                    <div className="data__title">Rotation Time</div>
+                    <div className="data__stat">830773</div>
+                </div>
             </div>
         </main>
     )
