@@ -3,8 +3,9 @@ import Burger from '../assets/icon-hamburger.svg'
 import Planets from '../data.json'
 import { NavLink, Route } from 'react-router-dom'
 import Arrow from '../assets/icon-chevron.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Planet from './Planet'
+import { useMediaQuery } from 'react-responsive'
 
 
 const Header = () => {
@@ -12,6 +13,14 @@ const Header = () => {
     const handleClick = () => {
         setClicked(!clicked)
     }
+    const notMobile = useMediaQuery({ query: `(min-width: 700px)` });
+    useEffect(() => {
+        if (notMobile) {
+            setClicked(true)
+        } else {
+            setClicked(false)
+        }
+    }, [notMobile])
     return (
         <>
         <header className="header">
