@@ -27,6 +27,7 @@ body {
 }
 
 .header {
+  position: relative;
   border-bottom: 1px solid var(--dark-gray);
   padding: 1.6rem 0;
 }
@@ -50,6 +51,44 @@ body {
 .header__burger {
   margin-right: 2.4rem;
   cursor: pointer;
+}
+
+.nav {
+  height: 100vh;
+  position: absolute;
+  background-color: var(--bg-dark);
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.nav__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  margin: 0 2.4rem;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.nav__li:last-child {
+  border-bottom: none;
+}
+
+.nav__link {
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 1.3px;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  
 }
 
 .grid {
