@@ -3,6 +3,13 @@ import Button from '../components/Button'
 import SourceIcon from '../assets/icon-source.svg'
 import { useEffect, useState } from 'react'
 import MercuryPlanet from '../assets/planet-mercury.svg'
+import EarthPlanet from '../assets/planet-earth.svg'
+import JupiterPlanet from '../assets/planet-jupiter.svg'
+import MarsPlanet from '../assets/planet-mars.svg'
+import NeptunePlanet from '../assets/planet-neptune.svg'
+import SaturnPlanet from '../assets/planet-saturn.svg'
+import UranusPlanet from '../assets/planet-uranus.svg'
+import VenusPlanet from '../assets/planet-venus.svg'
 
 const Planet = ({location}) => {
     const [planet, setPlanet] = useState('')
@@ -11,27 +18,71 @@ const Planet = ({location}) => {
     const [text, setText] = useState('')
     
     useEffect(() => {
-        /* const imagesArr = [{
+        const imagesArr = [{
             planet: "Mercury",
             images: {
                 planet: MercuryPlanet
             }
-        }] */
+        },
+            {
+            planet: "Earth",
+            images: {
+                planet: EarthPlanet
+            }
+        },
+            {
+            planet: "Jupiter",
+            images: {
+                planet: JupiterPlanet
+            }
+        },
+            {
+                planet: "Mars",
+                images: {
+                    planet: MarsPlanet
+                }
+            },
+            {
+                planet: "Neptune",
+                images: {
+                    planet: NeptunePlanet
+                }
+            },
+            {
+                planet: "Saturn",
+                images: {
+                    planet: SaturnPlanet
+                }
+            },
+            {
+                planet: "Uranus",
+                images: {
+                    planet: UranusPlanet
+                }
+            },
+            {
+                planet: "Venus",
+                images: {
+                    planet: VenusPlanet
+                }
+            }
+        ]
         if (location !== undefined && location.planetProps !== undefined) {
             setPlanet(location.planetProps.planet)
             setData(location.planetProps.data)
-            setImages(location.planetProps.images.planet)
+            const selectedPlanet = imagesArr.filter(item => item.planet === location.planetProps.planet)
+            setImages(selectedPlanet[0].images.planet)
             setText(location.planetProps.text)
         } 
        
-    }, [location])
+    }, [location, planet])
     return (
         <>
         {planet && <main className="grid">
             <div className="info-tabs">
-                <Button title="Overview" />
-                <Button title="Structure" />
-                <Button title="Surface" />
+                <Button num="1" title="Overview" />
+                <Button num="2" title="Structure" />
+                <Button num="3" title="Surface" />
             </div>
             <div className="img-wrapper">
                 <img src={images} alt="" className="img" />

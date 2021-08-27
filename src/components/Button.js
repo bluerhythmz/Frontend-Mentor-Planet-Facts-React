@@ -1,9 +1,19 @@
-import React from 'react'
+import { useMediaQuery } from 'react-responsive'
 
-const Button = ({title}) => {
+const Button = ({title, num}) => {
+    const notMobile = useMediaQuery({ query: `(min-width: 700px)` });
+    
     return (
         <button className="info-button">
-            {title}
+            {notMobile ? 
+                <>
+                    <span>0{num}</span>
+                    {" " + title}
+                </>
+                :
+                title
+            }
+            
         </button>
     )
 }
