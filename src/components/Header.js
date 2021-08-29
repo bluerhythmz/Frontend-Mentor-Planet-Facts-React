@@ -7,6 +7,23 @@ import { useState, useEffect } from 'react'
 import Planet from './Planet'
 import { useMediaQuery } from 'react-responsive'
 
+import MercuryPlanet from '../assets/planet-mercury.svg'
+import MercuryInternal from '../assets/planet-mercury-internal.svg'
+import EarthPlanet from '../assets/planet-earth.svg'
+import EarthInternal from '../assets/planet-earth-internal.svg'
+import JupiterPlanet from '../assets/planet-jupiter.svg'
+import JupiterInternal from '../assets/planet-jupiter-internal.svg'
+import MarsPlanet from '../assets/planet-mars.svg'
+import MarsInternal from '../assets/planet-mars-internal.svg'
+import NeptuneInternal from '../assets/planet-neptune-internal.svg'
+import NeptunePlanet from '../assets/planet-neptune.svg'
+import SaturnPlanet from '../assets/planet-saturn.svg'
+import SaturnInternal from '../assets/planet-saturn-internal.svg'
+import UranusPlanet from '../assets/planet-uranus.svg'
+import UranusInternal from '../assets/planet-uranus-internal.svg'
+import VenusPlanet from '../assets/planet-venus.svg'
+import VenusInternal from '../assets/planet-venus-internal.svg'
+
 
 const Header = () => {
     const [clicked, setClicked] = useState(false)
@@ -21,6 +38,18 @@ const Header = () => {
             setClicked(false)
         }
     }, [notMobile])
+    const planetImages = [
+        {
+        planet: "Mercury",
+        images: {
+            geology: MercuryPlanet,
+            internal: MercuryInternal
+        }
+    }]
+
+    const getImages = (name) => {
+        return  planetImages.filter(item => item.planet === name)
+    }
     return (
         <>
         <header className="header">
@@ -30,13 +59,15 @@ const Header = () => {
             </div>
             <nav className="nav" style={clicked ? {display: "block"} : {display: "none"}}>
                 <ul className="nav__links">
-                    {Planets.map(planet => (
-                        <li key={planet.name} className="nav__li">
+                    {Planets.map(planet => {
+                        return (
+                            <li key={planet.name} className="nav__li">
                             <NavLink to={{
-                                pathname:'/',
+                                pathname:`/${planet.name}`,
                                 planetProps: {
                                     planet: planet.name,
-                                    images: planet.images,
+                                    images: getImages(planet.name),
+                                    color: planet.color,
                                     text: {
                                         overview: planet.overview,
                                         structure: planet.structure,
@@ -53,7 +84,11 @@ const Header = () => {
                               className="nav__link">{planet.name}</NavLink>
                             <img src={Arrow} alt="" className="nav__arrow" />
                         </li>
-                    ))}
+                        )
+                    } 
+                    
+                        
+                    )}
                 </ul>
             </nav>
         </header>
