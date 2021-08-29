@@ -2,110 +2,47 @@ import React from 'react'
 import Button from '../components/Button'
 import SourceIcon from '../assets/icon-source.svg'
 import { useEffect, useState } from 'react'
-import MercuryPlanet from '../assets/planet-mercury.svg'
-import MercuryInternal from '../assets/planet-mercury-internal.svg'
-import EarthPlanet from '../assets/planet-earth.svg'
-import EarthInternal from '../assets/planet-earth-internal.svg'
-import JupiterPlanet from '../assets/planet-jupiter.svg'
-import JupiterInternal from '../assets/planet-jupiter-internal.svg'
-import MarsPlanet from '../assets/planet-mars.svg'
-import MarsInternal from '../assets/planet-mars-internal.svg'
-import NeptuneInternal from '../assets/planet-neptune-internal.svg'
-import NeptunePlanet from '../assets/planet-neptune.svg'
-import SaturnPlanet from '../assets/planet-saturn.svg'
-import SaturnInternal from '../assets/planet-saturn-internal.svg'
-import UranusPlanet from '../assets/planet-uranus.svg'
-import UranusInternal from '../assets/planet-uranus-internal.svg'
-import VenusPlanet from '../assets/planet-venus.svg'
-import VenusInternal from '../assets/planet-venus-internal.svg'
 
 const Planet = ({location}) => {
     const [planet, setPlanet] = useState('')
     const [data, setData] = useState('')
     const [images, setImages] = useState('')
     const [image, setImage] = useState('')
+    const [geologyImage, setGeologyImage] = useState('')
     const [text, setText] = useState('')
     const [textItem, setTextItem] = useState('')
     const [color, setColor] = useState('')
-    const [activeButton, setActiveButton] = useState('')
+    const [activeButton, setActiveButton] = useState('overview')
     
     useEffect(() => {
-        const imagesArr = [{
-            planet: "Mercury",
-            images: {
-                planet: MercuryPlanet,
-                inetrnal: MercuryInternal
-            }
-        },
-            {
-            planet: "Earth",
-            images: {
-                planet: EarthPlanet,
-                internal: EarthInternal
-            }
-        },
-            {
-            planet: "Jupiter",
-            images: {
-                planet: JupiterPlanet,
-                internal: JupiterInternal
-            }
-        },
-            {
-                planet: "Mars",
-                images: {
-                    planet: MarsPlanet,
-                    internal: MarsInternal
-                }
-            },
-            {
-                planet: "Neptune",
-                images: {
-                    planet: NeptunePlanet,
-                    internal: NeptuneInternal
-                }
-            },
-            {
-                planet: "Saturn",
-                images: {
-                    planet: SaturnPlanet,
-                    internal: SaturnInternal
-                }
-            },
-            {
-                planet: "Uranus",
-                images: {
-                    planet: UranusPlanet,
-                    internal: UranusInternal
-                }
-            },
-            {
-                planet: "Venus",
-                images: {
-                    planet: VenusPlanet,
-                    internal: VenusInternal
-                }
-            }
-        ]
         if (location !== undefined && location.planetProps !== undefined) {
             setPlanet(location.planetProps.planet)
             setData(location.planetProps.data)
-            /* const selectedPlanet = imagesArr.filter(item => item.planet === location.planetProps.planet)
-            setImages(selectedPlanet[0].images.planet) */
             setImages(location.planetProps.images)
-            /* setImage(location.planetProps.images.planet) */
+            setImage(location.planetProps.images[0].images.planet)
+            setGeologyImage('')
             setText(location.planetProps.text)
             setTextItem('')
             setColor(location.planetProps.color)
-            console.log(location.planetProps.images)
+            setActiveButton('overview')
         } 
     }, [location, planet])
 
     const handleClick = (button, value) => {
         setTextItem(value)
         setActiveButton(button)
-        if (button === "structure") {
-            setImage(image.internal)
+        switch (button)  {
+            case "structure":
+                setImage(images[0].images.internal)
+                setGeologyImage("")
+                break
+            case "geology":
+                setImage(images[0].images.planet)
+                setGeologyImage(images[0].images.geology)
+                break
+            default:
+                setImage(images[0].images.planet)
+                setGeologyImage("")
         }
     }
     return (
@@ -118,6 +55,7 @@ const Planet = ({location}) => {
             </div>
             <div className="img-wrapper">
                 <img src={image} alt="" className="img" />
+                <img src={geologyImage} alt="" className="img__geology" />
             </div>
             <div className="text">
                 <h2 className="text__title">{planet}</h2>
