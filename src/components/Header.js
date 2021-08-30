@@ -1,7 +1,7 @@
 import React from "react";
 import Burger from "../assets/icon-hamburger.svg";
 import Planets from "../data.json";
-import { NavLink, Route, useHistory, Switch } from "react-router-dom";
+import { NavLink, Route, /* useHistory, */ Switch } from "react-router-dom";
 import Arrow from "../assets/icon-chevron.svg";
 import { useState, useEffect } from "react";
 import Planet from "./Planet";
@@ -15,7 +15,7 @@ const Header = () => {
     setClicked(!clicked);
   };
 
-  const history = useHistory();
+  /* const history = useHistory(); */
 
   /* const handleHistory = (path) => {
     history.push(path);
