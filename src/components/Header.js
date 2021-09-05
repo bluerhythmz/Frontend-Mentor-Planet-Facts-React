@@ -1,7 +1,11 @@
 import React from "react";
 import Burger from "../assets/icon-hamburger.svg";
 import Planets from "../data.json";
+<<<<<<< HEAD
 import { NavLink } from "react-router-dom";
+=======
+import { NavLink, Route, /* useHistory, */ Switch } from "react-router-dom";
+>>>>>>> 5a5a2664783dea835413f6494d75eb8ec7b525f2
 import Arrow from "../assets/icon-chevron.svg";
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -13,6 +17,15 @@ const Header = () => {
     setClicked(!clicked);
   };
 
+<<<<<<< HEAD
+=======
+  /* const history = useHistory(); */
+
+  /* const handleHistory = (path) => {
+    history.push(path);
+  }; */
+
+>>>>>>> 5a5a2664783dea835413f6494d75eb8ec7b525f2
   const notMobile = useMediaQuery({ query: `(min-width: 700px)` });
   useEffect(() => {
     if (notMobile) {

@@ -1,8 +1,9 @@
 import React from "react";
-import Button from "../components/Button";
-import SourceIcon from "../assets/icon-source.svg";
 import { useEffect, useState } from "react";
 import Data from "./Data";
+import ImageDisplay from "./ImageDisplay";
+import Text from "./Text";
+import InfoTabs from "./InfoTabs";
 
 const Planet = ({ location }) => {
   const [planet, setPlanet] = useState("");
@@ -50,40 +51,9 @@ const Planet = ({ location }) => {
     <>
       {planet && (
         <main className="grid">
-          <div className="info-tabs">
-            {text &&
-              Object.entries(text).map(([key, value], index) => (
-                <Button
-                  handleClick={handleClick}
-                  key={key}
-                  value={value}
-                  num={index + 1}
-                  title={key}
-                  activeButton={activeButton}
-                  color={color}
-                />
-              ))}
-          </div>
-          <div className="img-wrapper">
-            <img src={image} alt="" className="img" />
-            <img src={geologyImage} alt="" className="img__geology" />
-          </div>
-          <div className="text">
-            <h2 className="text__title">{planet}</h2>
-            <div className="text__description">
-              {textItem ? textItem.content : text.overview.content}
-            </div>
-            <span className="text__source">
-              Source:
-              <a
-                href={textItem ? textItem.source : text.overview.source}
-                className="source"
-              >
-                Wikipedia
-                <img src={SourceIcon} alt="link-icon" className="source__img" />
-              </a>
-            </span>
-          </div>
+          <InfoTabs text={text} handleClick={handleClick} activeButton={activeButton} color={color} />
+          <ImageDisplay image={image} geologyImage={geologyImage} /> 
+          <Text planet={planet} textItem={textItem} text={text} />
           <Data data={data} />
         </main>
       )}
