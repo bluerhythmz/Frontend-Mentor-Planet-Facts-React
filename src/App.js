@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Planet from "./components/Planet";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { planetImages } from "./components/ImageImports";
 import Planets from "./data.json";
 
@@ -38,6 +38,7 @@ function App() {
             />
           </Route>
         ))}
+        <Redirect from="/" to="/Mercury" />
       </div>
     </Router>
   );
