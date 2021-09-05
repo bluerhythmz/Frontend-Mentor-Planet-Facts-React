@@ -47,12 +47,18 @@ const Planet = ({ location }) => {
         setGeologyImage("");
     }
   };
+
   return (
     <>
       {planet && (
         <main className="grid">
-          <InfoTabs text={text} handleClick={handleClick} activeButton={activeButton} color={color} />
-          <ImageDisplay image={image} geologyImage={geologyImage} /> 
+          <InfoTabs
+            text={text}
+            handleClick={handleClick}
+            activeButton={activeButton}
+            color={color}
+          />
+          <ImageDisplay image={image} geologyImage={geologyImage} />
           <Text planet={planet} textItem={textItem} text={text} />
           <Data data={data} />
         </main>
