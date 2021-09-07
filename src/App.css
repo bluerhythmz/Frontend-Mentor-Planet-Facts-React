@@ -72,6 +72,7 @@ body {
   width: 100%;
   margin-top: 3rem;
   z-index: 1;
+  display: none;
 }
 
 .nav__links {
@@ -258,6 +259,10 @@ body {
 }
 
 @media (min-width: 700px) {
+  .circle {
+    display: none;
+  }
+
   .header__burger {
     display: none;
   }

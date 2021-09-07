@@ -14,6 +14,7 @@ const Header = () => {
   };
 
   const notMobile = useMediaQuery({ query: `(min-width: 700px)` });
+
   useEffect(() => {
     if (notMobile) {
       setClicked(true);
@@ -42,12 +43,11 @@ const Header = () => {
             {Planets.map((planet) => {
               return (
                 <li key={planet.name} className="nav__li">
-                  {!notMobile && (
-                    <div
-                      className="circle"
-                      style={{ backgroundColor: planet.color }}
-                    ></div>
-                  )}
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: planet.color }}
+                  ></div>
+
                   <NavLink to={`/${planet.name}`} className="nav__link">
                     {planet.name}
                   </NavLink>

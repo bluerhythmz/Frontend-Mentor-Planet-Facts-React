@@ -21,23 +21,19 @@ function App() {
             {Planets.map((planet) => (
               <Route key={planet.name} path={`/${planet.name}`}>
                 <Planet
-                  location={{
-                    planetProps: {
-                      planet: planet.name,
-                      images: getImages(planet.name),
-                      color: planet.color,
-                      text: {
-                        overview: planet.overview,
-                        structure: planet.structure,
-                        geology: planet.geology,
-                      },
-                      data: {
-                        "rotation time": planet.rotation,
-                        "revolution time": planet.revolution,
-                        radius: planet.radius,
-                        "average temp": planet.temperature,
-                      },
-                    },
+                  planet={planet.name}
+                  images={getImages(planet.name)}
+                  color={planet.color}
+                  text={{
+                    overview: planet.overview,
+                    structure: planet.structure,
+                    geology: planet.geology,
+                  }}
+                  data={{
+                    "rotation time": planet.rotation,
+                    "revolution time": planet.revolution,
+                    radius: planet.radius,
+                    "average temp": planet.temperature,
                   }}
                 />
               </Route>
