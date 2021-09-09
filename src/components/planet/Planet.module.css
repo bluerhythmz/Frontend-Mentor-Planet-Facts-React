@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-template-areas:
+    "info-tabs"
+    "image"
+    "text"
+    "data";
+}
+
+@media (min-width: 700px) {
+  .grid {
+    margin: 0 3.9rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "image image"
+      "text info-tabs"
+      "data data";
+  }
+}
+
+@media (min-width: 1300px) {
+  .grid {
+    margin: 0 16.5rem;
+    margin-top: 12rem;
+    grid-template-areas:
+      "image text"
+      "image info-tabs"
+      "data data";
+  }
+}
+
+@media (min-width: 1750px) {
+  .grid {
+    margin: 0 26.5rem;
+    margin-top: 12rem;
+  }
+}

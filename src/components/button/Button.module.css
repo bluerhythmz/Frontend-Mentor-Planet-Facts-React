@@ -1,0 +1,43 @@
+.infoButton {
+  background: none;
+  border: none;
+  font-family: "Spartan", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: 0.1rem;
+  color: var(--light-gray);
+  padding: 2rem 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.infoButton:hover {
+  background: var(--light-gray);
+}
+
+@media (min-width: 700px) {
+  .infoButton {
+    border: 1px solid var(--dark-gray);
+    min-width: 90%;
+    text-align: left;
+    padding-left: 2rem;
+    letter-spacing: 1.9px;
+    color: var(--white);
+  }
+
+  .infoButton span {
+    color: var(--light-gray);
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .infoButton {
+    min-width: 100%;
+    margin: 0.8rem 0;
+    font-size: 1.2rem;
+    letter-spacing: 2.5px;
+  }
+}

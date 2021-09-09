@@ -1,6 +1,6 @@
 import "./App.css";
-import Header from "./components/Header";
-import Planet from "./components/Planet";
+import Header from "./components/header/Header";
+import Planet from "./components/planet/Planet";
 import { Route, Redirect, useLocation } from "react-router-dom";
 import { planetImages } from "./components/ImageImports";
 import Planets from "./data.json";

@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Data from "./Data";
-import ImageDisplay from "./ImageDisplay";
-import Text from "./Text";
-import InfoTabs from "./InfoTabs";
+import Data from "../data/Data";
+import ImageDisplay from "../imageDisplay/ImageDisplay";
+import Text from "../text/Text";
+import InfoTabs from "../infoTabs/InfoTabs";
+import styles from './Planet.module.css'
 
 const Planet = ({ planet, images, color, text, data }) => {
   const [activeButton, setActiveButton] = useState("overview");
@@ -34,7 +35,7 @@ const Planet = ({ planet, images, color, text, data }) => {
   };
 
   return (
-    <main className="grid">
+    <main className={styles.grid}>
       <InfoTabs
         text={text}
         handleClick={handleClick}

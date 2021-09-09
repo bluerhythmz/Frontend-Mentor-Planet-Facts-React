@@ -1,0 +1,80 @@
+.data {
+  grid-area: data;
+  margin: 0 2.4rem;
+  margin-top: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dataItem {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid var(--dark-gray);
+  padding: 1.3rem 2.4rem;
+  margin: 0.8rem 0;
+}
+
+.dataTitle {
+  font-family: "Spartan", sans-serif;
+  color: var(--light-gray);
+  font-size: 0.8rem;
+  line-height: 2em;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.dataStat {
+  font-family: "Antonio", sans-serif;
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 2.6rem;
+  text-transform: uppercase;
+  letter-spacing: -0.75px;
+}
+
+@media (min-width: 700px) {
+  .data {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .dataItem {
+    flex-direction: column;
+    min-width: auto;
+  }
+
+  .dataTitle,
+  .dataStat {
+    margin-left: 1.9rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .data {
+    justify-content: space-between;
+    margin: 0 0;
+    margin-top: 8.7rem;
+  }
+
+  .dataItem {
+    width: 24%;
+    max-width: 25%;
+    padding: 2.45rem 0;
+  }
+
+  .dataTitle {
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .dataStat {
+    font-size: 4rem;
+    line-height: 5.2rem;
+    letter-spacing: -1.5px;
+  }
+}

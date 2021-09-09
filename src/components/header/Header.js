@@ -1,10 +1,11 @@
 import React from "react";
-import Burger from "../assets/icon-hamburger.svg";
-import Planets from "../data.json";
+import Burger from "../../assets/icon-hamburger.svg";
+import Planets from "../../data.json";
 import { NavLink } from "react-router-dom";
-import Arrow from "../assets/icon-chevron.svg";
+import Arrow from "../../assets/icon-chevron.svg";
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import styles from './Header.module.css'
 
 const Header = () => {
   const [clicked, setClicked] = useState(false);
@@ -25,33 +26,33 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
-        <div className="header__title-box">
-          <h1 className="header__title">The Planets</h1>
+      <header className={styles.header}>
+        <div className={styles.headerTitleBox}>
+          <h1 className={styles.headerTitle}>The Planets</h1>
           <img
             src={Burger}
             alt="Burger Navigation Button"
             onClick={handleClick}
-            className="header__burger"
+            className={styles.headerBurger}
           />
         </div>
         <nav
-          className="nav"
+          className={styles.nav}
           style={clicked ? { display: "block" } : { display: "none" }}
         >
-          <ul className="nav__links">
+          <ul className={styles.navLinks}>
             {Planets.map((planet) => {
               return (
-                <li key={planet.name} className="nav__li">
+                <li key={planet.name} className={styles.navLi}>
                   <div
-                    className="circle"
+                    className={styles.circle}
                     style={{ backgroundColor: planet.color }}
                   ></div>
 
-                  <NavLink to={`/${planet.name}`} className="nav__link">
+                  <NavLink to={`/${planet.name}`} className={styles.navLink}>
                     {planet.name}
                   </NavLink>
-                  <img src={Arrow} alt="" className="nav__arrow" />
+                  <img src={Arrow} alt="" className={styles.navArrow} />
                 </li>
               );
             })}

@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import styles from './Button.module.css'
 
 const Button = ({ title, value, num, handleClick, activeButton, color }) => {
   const notMobile = useMediaQuery({ query: `(min-width: 700px)` });
@@ -23,7 +24,7 @@ const Button = ({ title, value, num, handleClick, activeButton, color }) => {
           : {}
       }
       onClick={() => handleClick(title, value)}
-      className={`info-button`}
+      className={styles.infoButton}
     >
       {notMobile ? (
         <>

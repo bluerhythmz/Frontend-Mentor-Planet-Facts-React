@@ -1,0 +1,49 @@
+.imgWrapper {
+  grid-area: image;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 9rem 0;
+}
+
+.img {
+  max-width: 30%;
+}
+
+.imgGeology {
+  position: absolute;
+  top: 76%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 15%;
+  margin-top: -1rem;
+}
+
+@media (min-width: 700px) {
+  .imgWrapper {
+    margin: 4rem 0;
+  }
+
+  .img {
+    max-width: 26%;
+  }
+
+  .imgGeology {
+    top: 82%;
+    left: 50%;
+    max-width: 12%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .img {
+    max-width: 52%;
+  }
+
+  .imgGeology {
+    top: 85%;
+    left: 50%;
+    max-width: 18%;
+  }
+}

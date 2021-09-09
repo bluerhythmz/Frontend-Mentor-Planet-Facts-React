@@ -1,0 +1,83 @@
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-area: text;
+  margin: 0 2.4rem;
+}
+
+.textTitle {
+  font-family: "Antonio", sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 5rem;
+  color: var(--white);
+}
+
+.textDescription {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+  color: var(--white);
+  text-align: center;
+  margin-top: 1.6rem;
+}
+
+.textSource,
+.source {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  color: var(--light-gray);
+}
+
+.textSource {
+  display: flex;
+  margin-top: 3.2rem;
+}
+
+.source {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.sourceImg {
+  margin-left: 5px;
+}
+
+@media (min-width: 700px) {
+  .text {
+    align-items: flex-start;
+    margin: 0 0;
+  }
+
+  .textDescription {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1300px) {
+  .text {
+    width: 35rem;
+    max-width: 64%;
+    justify-self: center;
+  }
+
+  .textTitle {
+    font-size: 8rem;
+    line-height: 10rem;
+  }
+
+  .textDescription {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
+
+  .textSource,
+  .source {
+    font-size: 1.4rem;
+  }
+}

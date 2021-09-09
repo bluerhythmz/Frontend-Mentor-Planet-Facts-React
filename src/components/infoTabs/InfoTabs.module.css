@@ -1,0 +1,24 @@
+.infoTabs {
+  grid-area: info-tabs;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+@media (min-width: 700px) {
+  .infoTabs {
+    flex-direction: column;
+    border: none;
+  }
+}
+
+@media (min-width: 1300px) {
+  .infoTabs {
+    width: 35rem;
+    max-width: 64%;
+    align-items: flex-start;
+    justify-self: center;
+    margin-top: 3.9rem;
+  }
+}

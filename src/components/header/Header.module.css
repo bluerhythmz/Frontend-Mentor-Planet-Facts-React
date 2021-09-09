@@ -1,0 +1,141 @@
+.header {
+  position: relative;
+  border-bottom: 1px solid var(--dark-gray);
+  padding: 1.6rem 0;
+}
+
+.headerTitleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitle {
+  font-family: "Antonio", sans-serif;
+  color: var(--white);
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-left: 2.4rem;
+}
+
+.headerBurger {
+  margin-right: 2.4rem;
+  cursor: pointer;
+}
+
+.nav {
+  height: 100vh;
+  position: absolute;
+  background-color: var(--bg-dark);
+  width: 100%;
+  margin-top: 3rem;
+  z-index: 1;
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  margin: 0 2.4rem;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.circle {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.navLi:last-child {
+  border-bottom: none;
+}
+
+.navLink {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 1.3px;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 4rem;
+}
+
+@media (min-width: 700px) {
+  .circle {
+    display: none;
+  }
+
+  .headerBurger {
+    display: none;
+  }
+
+  .headerTitleBox {
+    justify-content: center;
+  }
+
+  .nav {
+    position: static;
+    height: auto;
+  }
+
+  .navArrow {
+    display: none;
+  }
+
+  .navLi {
+    border: none;
+    margin: 0 1.7rem;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .navLink {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1300px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0;
+  }
+
+  .headerTitle {
+    font-weight: 400;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    letter-spacing: -1px;
+  }
+
+  .nav {
+    width: auto;
+  }
+
+  .navLinks {
+    justify-content: flex-end;
+  }
+
+  .navLi {
+    margin: 0 1.7rem;
+  }
+}
