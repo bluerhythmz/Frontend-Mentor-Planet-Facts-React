@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/header/Header";
 import Planet from "./components/planet/Planet";
-import { Route, useLocation } from "react-router-dom";
+import { Route, useLocation, Redirect } from "react-router-dom";
 import { planetImages } from "./components/ImageImports";
 import Planets from "./data.json";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -41,7 +41,7 @@ function App() {
           </div>
         </CSSTransition>
       </TransitionGroup>
-      <Route path="/Mercury" />
+      <Redirect path="/Mercury" />
     </div>
   );
 }
