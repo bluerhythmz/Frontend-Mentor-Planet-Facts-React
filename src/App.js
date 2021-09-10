@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/header/Header";
 import Planet from "./components/planet/Planet";
-import { Route, Redirect, useLocation } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import { planetImages } from "./components/ImageImports";
 import Planets from "./data.json";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -17,7 +17,7 @@ function App() {
       <Header />
       <TransitionGroup>
         <CSSTransition timeout={250} classNames="fade" key={location.key}>
-          <div key={location}>
+          <div location={location}>
             {Planets.map((planet) => (
               <Route key={planet.name} path={`/${planet.name}`}>
                 <Planet
@@ -41,7 +41,7 @@ function App() {
           </div>
         </CSSTransition>
       </TransitionGroup>
-      <Redirect to="/Mercury" />
+      <Route path="/Mercury" />
     </div>
   );
 }

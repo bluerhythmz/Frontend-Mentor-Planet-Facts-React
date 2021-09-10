@@ -1,20 +1,16 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Data from "../data/Data";
 import ImageDisplay from "../imageDisplay/ImageDisplay";
 import Text from "../text/Text";
 import InfoTabs from "../infoTabs/InfoTabs";
-import styles from './Planet.module.css'
+import styles from "./Planet.module.css";
 
 const Planet = ({ planet, images, color, text, data }) => {
   const [activeButton, setActiveButton] = useState("overview");
   const [textItem, setTextItem] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(images[0].images.planet);
   const [geologyImage, setGeologyImage] = useState("");
-
-  useEffect(() => {
-    setImage(images[0].images.planet);
-  }, [images]);
 
   const handleClick = (button, value) => {
     setTextItem(value);
