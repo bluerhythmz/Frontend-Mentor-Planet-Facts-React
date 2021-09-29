@@ -41,7 +41,7 @@ function App() {
           </div>
         </CSSTransition>
       </TransitionGroup>
-      <Redirect path="/Mercury" />
+      <Redirect to="/Mercury" />
     </div>
   );
 }
