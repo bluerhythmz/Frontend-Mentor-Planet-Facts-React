@@ -5,12 +5,14 @@ import ImageDisplay from "../imageDisplay/ImageDisplay";
 import Text from "../text/Text";
 import InfoTabs from "../infoTabs/InfoTabs";
 import styles from "./Planet.module.css";
+import { motion } from "framer-motion";
 
 const Planet = ({ planet, images, color, text, data }) => {
   const [activeButton, setActiveButton] = useState("overview");
   const [textItem, setTextItem] = useState("");
   const [image, setImage] = useState(images[0].images.planet);
-  const [geologyImage, setGeologyImage] = useState("");
+
+  let geologyImage = activeButton === "geology" ? images[0].images.geology : "";
 
   const handleClick = (button, value) => {
     setTextItem(value);
@@ -18,20 +20,22 @@ const Planet = ({ planet, images, color, text, data }) => {
     switch (button) {
       case "structure":
         setImage(images[0].images.internal);
-        setGeologyImage("");
         break;
       case "geology":
         setImage(images[0].images.planet);
-        setGeologyImage(images[0].images.geology);
         break;
       default:
         setImage(images[0].images.planet);
-        setGeologyImage("");
     }
   };
 
   return (
-    <main className={styles.grid}>
+    <motion.div
+      className={styles.grid}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <InfoTabs
         text={text}
         handleClick={handleClick}
@@ -41,7 +45,7 @@ const Planet = ({ planet, images, color, text, data }) => {
       <ImageDisplay image={image} geologyImage={geologyImage} />
       <Text planet={planet} textItem={textItem} text={text} />
       <Data data={data} />
-    </main>
+    </motion.div>
   );
 };
 
