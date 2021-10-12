@@ -48,8 +48,7 @@ const Header = () => {
                     className={styles.circle}
                     style={{ backgroundColor: planet.color }}
                   ></div>
-
-                  <NavLink to={`/${planet.name}`} className={styles.navLink}>
+                  <NavLink onClick={() => notMobile ? setClicked(true) : setClicked(false)} to={`/${planet.name}`} className={styles.navLink}>
                     {planet.name}
                   </NavLink>
                   <img src={Arrow} alt="" className={styles.navArrow} />
