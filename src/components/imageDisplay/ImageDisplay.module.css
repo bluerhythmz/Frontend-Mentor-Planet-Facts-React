@@ -47,3 +47,15 @@
     max-width: 18%;
   }
 }
+
+@media (min-width: 1900px) {
+  .img {
+    width: 40%;
+  }
+
+  .imgGeology {
+    top: 85%;
+    left: 50%;
+    max-width: 18%;
+  }
+}
